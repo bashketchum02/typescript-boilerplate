@@ -6,15 +6,14 @@ import mongoose from 'mongoose';
 
 let firstUserIdTest = '';
 const firstUserBody = {
-    email: `marcos.henrique+${shortid.generate()}@toptal.com`,
+    email: `anirbanpranto+${shortid.generate()}@auronex.com`,
     password: 'Sup3rSecret!23',
 };
 
 let accessToken = '';
 let refreshToken = '';
-const newFirstName = 'Jose';
-const newFirstName2 = 'Paulo';
-const newLastName2 = 'Faraco';
+const newFirstName2 = 'Shaun';
+const newLastName2 = 'Mak';
 
 describe('users and auth endpoints', function () {
     let request: supertest.SuperAgentTest;
@@ -91,8 +90,8 @@ describe('users and auth endpoints', function () {
                 .send({
                     email: firstUserBody.email,
                     password: firstUserBody.password,
-                    firstName: 'Marcos',
-                    lastName: 'Silva',
+                    firstName: 'Anirban',
+                    lastName: 'Bala',
                     permissionFlags: 256,
                 });
             expect(res.status).to.equal(400);

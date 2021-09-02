@@ -9,6 +9,7 @@ import {UsersRoutes} from './users/users.routes.config';
 import { AuthRoutes } from './auth/auth.routes.config';
 import debug from 'debug';
 import dotenv from 'dotenv';
+import helmet from 'helmet';
 const dotenvResult = dotenv.config();
 if (dotenvResult.error) {
     throw dotenvResult.error;
@@ -22,6 +23,7 @@ const debugLog: debug.IDebugger = debug('app');
 
 // here we are adding middleware to parse all incoming requests as JSON 
 app.use(express.json());
+app.use(helmet());
 
 // here we are adding middleware to allow cross-origin requests
 app.use(cors());
